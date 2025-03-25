@@ -122,6 +122,20 @@ The provided main code sets the file path to `"the-brutalist_reviews.txt"` (repl
 content of the file, calls `clean_reviews()` to clean and format the reviews, and finally calls `summarize_reviews_with_llama()` to summarize the
 cleaned reviews using Llama 3.2. The resulting summary is then printed.
 
+```mermaid
+flowchart TD
+    A[Start] --> B[Load reviews from file]
+    B --> C[Extract text data]
+    C --> D[Clean reviews using regex function]
+    D --> E[Append instruction to text data]
+    E --> F[Send request to Llama 3.2 model]
+    F --> G[Receive response from Llama 3.2]
+    G --> H{Response contains summary?}
+    H -- Yes --> I[Extract summary content]
+    H -- No --> X[Print message: No summary available]
+    I --> J[Display summary]
+    J --> K[End]
+```
 
 
 
