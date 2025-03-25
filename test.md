@@ -1,15 +1,14 @@
 ```mermaid
 graph LR;
-    User Input --> Movie Title;
-    Movie Title --> Review Page;
-    Review Page --> Scraping Loop;
-    Review Page --> Write to File;
-    Scraping Loop --> Write to File;
-    Write to File --> Review Text;
+    User Input[Enter Movie Title] --> Movie Title;
+    Movie Title -->|Scrape Review Page| Review Page;
+    Review Page -->|Start Scraping Loop| Scraping Loop;
+    Scraping Loop -->|Success/Failed| Write to File;
+    Write to File --> Review Text[Review Data];
     alt Yes/No/Timeout
         |
         |
-        |-- Yes --> Write to File;
-        |-- No --> Write to File;
-        |-- Timeout --> Fail;
+        |-- Yes --> Review Text;
+        |-- No --> No Data;
+        |-- Timeout --> Error;
 ```
