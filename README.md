@@ -136,6 +136,20 @@ flowchart TD
     I --> J[Display summary]
     J --> K[End]
 ```
+## <ins> Overall Work Flow </ins>
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Scrape reviews from website]
+    B --> C[Save reviews to file]
+    C --> D[Load reviews from file]
+    D --> E[Clean extracted reviews]
+    E --> F[Send cleaned reviews to Llama 3.2]
+    F --> G[Receive summarized response]
+    G --> H[Display summary]
+    H --> I[End]
+```
+
 
 
 
