@@ -13,7 +13,7 @@ ollama pull [MODEL_NAME]
 
 3. install python version=3.12.6, create a virtual environment, make sure  that pip is installed, and install the dependencies using this command.
 ```bash
-pip install -r requi.txt
+pip install -r reqlet.txt
 ```
 
 4. if you are using git, clone this repo by running
