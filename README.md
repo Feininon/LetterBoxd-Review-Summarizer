@@ -90,6 +90,21 @@ the formatted reviews are separated by two newline characters (`\n\n`).
 - `process_file(file_path):` This function takes a file path as its argument, opens the file in read mode, reads the contents into a string variable,
 and returns that string. It is used to load the scraped review data from the specified file.
 
+```mermaid
+flowchart TD
+    A[Start] --> B[Read input file]
+    B --> C[Extract text content]
+    C --> D[Apply regex pattern to find reviews with star ratings]
+    D --> E{Matches found?}
+    E -- Yes --> F[Extract star ratings and reviews]
+    E -- No --> X[Print message: No reviews found]
+    F --> G[Format extracted reviews]
+    G --> H[Join formatted reviews into final text]
+    H --> I[Print cleaned review text]
+    I --> J[End]
+```
+
+
 ### _03.llamaSum.py_
 
  This Python script consists of three new functions, `load_reviews()`, `summarize_reviews_with_llama()`, and the main code. Here's an overview of
