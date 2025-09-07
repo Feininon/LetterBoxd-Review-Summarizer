@@ -150,6 +150,7 @@ flowchart TD
     H --> I[End]
 ```
 
+-- was doing it after hours and was really stuck figuring out the scraping part and finnly did, godamn.
 
 
 
